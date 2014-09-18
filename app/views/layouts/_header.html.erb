@@ -1,0 +1,21 @@
+<title>Recpost</title>
+    
+<h1>Recpost</h1>
+
+<div id = "nav">
+  <ul>  
+    <% if !current_user %>
+            <li><%= link_to "Register", new_user_path %></li>
+             <li><%= link_to "About", about_path %></li>  
+            <li><%= link_to "SignIn", new_session_path %></li>   
+
+    <% else %>
+            <li><%= link_to  "Posts", root_path %></li>  
+             <li><%= link_to "Create", new_post_path %></li>  
+            <li><%= link_to "Profile", current_user %></li>
+             <li><%= link_to "About", about_path %></li>  
+            <li><%= link_to "Sign Out", signout_path, prompt: 'Are you sure?' %></li>
+    <% end %>
+
+  </ul>  
+</div>

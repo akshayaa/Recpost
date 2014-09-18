@@ -1,0 +1,12 @@
+
+<div class="row">
+	<p><%= @post.user.username %></p>
+	<div class="row">
+			<%= @post.content %>
+			<% if @post.user == current_user %>
+				<p><%= link_to "edit", edit_post_path(@post) %> | <%= link_to "delete", post_path(@post), method: 'delete' %></p>
+			<% end %>
+	</div>
+	<%= render 'comments/load' %>
+	<%= render 'comments/comment_form' %>
+</div>
